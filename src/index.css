@@ -11,3 +11,8 @@
 .sans {
   font-family: 'Noto Sans', sans-serif;
 }
+
+.layout {
+  min-height: 100vh;
+  background-color: #5688E4;
+}
