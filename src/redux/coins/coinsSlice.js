@@ -1,7 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const API_URL = 'https://api.coinstats.app/public/v1/coins';
+
+export const getCoins = createAsyncThunk('coins/getCoins', async () => {
+  try {
+    const response = await axios.get(API_URL);
+    return response.data.coins;
+  } catch (error) {
+    return error.message;
+  }
+});
 
 const initialState = {
-  coinsArr: ['BTC', 'USD', 'EUR'],
+  coinsArr: [],
+  filteredList: [],
   status: 'idle',
   error: null,
 };
@@ -9,7 +22,39 @@ const initialState = {
 const coinsSlice = createSlice({
   name: 'coins',
   initialState,
-  reducers: {},
+  reducers: {
+    updateFilteredList: (state, action) => {
+      const filteredList = state.coinsArr.filter((coin) => (
+        coin.name.toLowerCase().includes(action.payload.toLowerCase())));
+      state.filteredList = filteredList;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCoins.fulfilled, (state, action) => {
+        state.status = 'fulfilled';
+        const newArr = [];
+        action.payload.forEach((coin) => {
+          const newCoin = {
+            id: coin.id,
+            name: coin.name,
+            symbol: coin.description,
+            activeMember: false,
+          };
+          newArr.push(newCoin);
+        });
+        state.coinsArr = newArr;
+      })
+      .addCase(getCoins.pending, (state) => {
+        state.status = 'Loading';
+      })
+      .addCase(getCoins.rejected, (state, action) => {
+        state.status = 'rejected';
+        state.error = action.error.message;
+      });
+  },
 });
+
+export const { updateFilteredList } = coinsSlice.actions;
 
 export default coinsSlice.reducer;
