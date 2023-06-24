@@ -38,8 +38,10 @@ const coinsSlice = createSlice({
           const newCoin = {
             id: coin.id,
             name: coin.name,
-            symbol: coin.description,
-            activeMember: false,
+            symbol: coin.symbol,
+            img: coin.icon,
+            price: coin.price,
+            change: coin.priceChange1d,
           };
           newArr.push(newCoin);
         });
