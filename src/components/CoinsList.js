@@ -19,8 +19,8 @@ function CoinsList() {
     <section>
       <FilterForm />
       {coins.filteredList.length === 0 ? (
-        <ul className='w-full grid grid-cols-2 gap-2'>
-          {coins.coinsArr.map((coin) => (
+        <ul className="w-full grid grid-cols-2">
+          {coins.coinsArr.map((coin, index) => (
             <Coin
               key={coin.id}
               name={coin.name}
@@ -28,12 +28,13 @@ function CoinsList() {
               img={coin.img}
               price={coin.price}
               change={coin.change}
+              index={index}
             />
           ))}
         </ul>
       ) : (
-        <ul className='w-full grid grid-cols-2 gap-2'>
-          {coins.filteredList.map((coin) => (
+        <ul className="w-full grid grid-cols-2">
+          {coins.filteredList.map((coin, index) => (
             <Coin
               key={coin.id}
               name={coin.name}
@@ -41,6 +42,7 @@ function CoinsList() {
               img={coin.img}
               price={coin.price}
               change={coin.change}
+              index={index}
             />
           ))}
         </ul>
