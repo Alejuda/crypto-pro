@@ -41,7 +41,12 @@ const coinsSlice = createSlice({
             symbol: coin.symbol,
             img: coin.icon,
             price: coin.price,
+            hour: coin.priceChange1h,
             change: coin.priceChange1d,
+            week: coin.priceChange1w,
+            web: coin.websiteUrl,
+            marketCap: coin.marketCap,
+            volume: coin.volume,
           };
           newArr.push(newCoin);
         });

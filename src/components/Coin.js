@@ -15,7 +15,7 @@ function Coin({
       <div className="flex justify-between">
         <img className="w-16 h-auto" src={img} alt="NAME" />
         <div className="flex flex-col justify-between items-end">
-          <p className="text-end font-bold lato text-lg">{name}</p>
+          <p className="text-end font-bold sans text-lg">{name}</p>
           <p className="rounded-lg bg-slate-600 px-4 text-center">{symbol}</p>
         </div>
       </div>
