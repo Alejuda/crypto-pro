@@ -15,9 +15,9 @@ function CoinsList() {
     }
   }, [dispatch, coins.coinsArr.length]);
 
-  if (coins.status === 'loading') {
+  if (coins.status === 'Loading') {
     return (
-      <p>Loading...</p>
+      <p className="text-text-color font-extrabold text-3xl text-center py-10">Loading...</p>
     );
   }
 
