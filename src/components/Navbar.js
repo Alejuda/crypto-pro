@@ -12,7 +12,6 @@ const Navbar = () => (
       </div>
     </NavLink>
     <h1 className="font-bold lato text-xl">CRYPTO-PRO</h1>
-    {/* <NavLink className="lato text-text-color" to="/coin">Coin</NavLink> */}
     <div className="flex gap-2 w-1/4 justify-end">
       <FaMicrophone />
       <IoMdSettings />
