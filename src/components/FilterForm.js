@@ -1,11 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { updateFilteredList } from '../redux/coins/coinsSlice';
 
 function FilterForm() {
   const dispatch = useDispatch();
 
   const [filtering, setFiltering] = useState(false);
+
+  useEffect(() => {
+    dispatch(updateFilteredList(''));
+  }, [dispatch]);
 
   const handleChange = (e) => {
     dispatch(updateFilteredList(e.target.value));

@@ -15,6 +15,12 @@ function CoinsList() {
     }
   }, [dispatch, coins.coinsArr.length]);
 
+  if (coins.status === 'loading') {
+    return (
+      <p>Loading...</p>
+    );
+  }
+
   return (
     <section>
       <FilterForm />
