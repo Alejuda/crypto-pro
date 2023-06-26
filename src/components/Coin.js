@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 function Coin({
-  name, symbol, img, price, change, index,
+  id, name, symbol, img, price, change, index,
 }) {
   const differentStyle = index % 4 === 1 || index % 4 === 2;
-  const style = differentStyle ? 'bg-blue-2' : 'bg-blue-3';
+  const style = differentStyle ? 'bg-blue-3' : 'bg-blue-4';
   return (
-    <NavLink className={`lato text-text-color p-5 coin ${style}`} to="/coin">
+    <NavLink className={`lato text-text-color p-5 coin ${style}`} to={`coin/${id}`}>
       <img className="mx-auto w-16 h-auto" src={img} alt="NAME" />
       <p className="text-center">
         {name}
@@ -39,4 +39,5 @@ Coin.propTypes = {
   price: PropTypes.number.isRequired,
   change: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

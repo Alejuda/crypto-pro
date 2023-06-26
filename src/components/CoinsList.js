@@ -23,6 +23,7 @@ function CoinsList() {
           {coins.coinsArr.map((coin, index) => (
             <Coin
               key={coin.id}
+              id={coin.id}
               name={coin.name}
               symbol={coin.symbol}
               img={coin.img}
@@ -37,6 +38,7 @@ function CoinsList() {
           {coins.filteredList.map((coin, index) => (
             <Coin
               key={coin.id}
+              id={coin.id}
               name={coin.name}
               symbol={coin.symbol}
               img={coin.img}
