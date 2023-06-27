@@ -4,19 +4,18 @@ import Coin from '../components/Coin';
 import '@testing-library/jest-dom';
 
 describe('Coin component', () => {
-  const coinData = {
-    id: '1',
-    name: 'Bitcoin',
-    symbol: 'BTC',
-    img: 'bitcoin.png',
-    price: 50000,
-    change: 2,
-  };
-
   it('renders coin details correctly', () => {
     render(
       <BrowserRouter>
-        <Coin {...coinData} index={0} />
+        <Coin 
+          index={0}
+          id='1'
+          name='Bitcoin'
+          symbol='BTC'
+          img='bitcoin.png'
+          price={50000}
+          change={2} 
+        />
       </BrowserRouter>
     );
 
