@@ -10,7 +10,7 @@ Crypto Pro</b></h1>
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [🚀 Space Travelers ](#-space-travelers-)
+- [🚀 Cripto Pro ](#about-project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
