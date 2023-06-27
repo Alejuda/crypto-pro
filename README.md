@@ -154,7 +154,11 @@ Thanks for checking out our app! Please feel free to reach out with any question
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-would like to thanks Microverse corporation for the README template.
+I would like to thanks Microverse corporation for the README template.
+
+The Crypto-Pro template was created by Nelson Sakwa and is used under the CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). Changes have been made to the original template.
+
+Original Template: https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
