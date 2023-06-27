@@ -7,16 +7,16 @@ describe('Coin component', () => {
   it('renders coin details correctly', () => {
     render(
       <BrowserRouter>
-        <Coin 
+        <Coin
           index={0}
-          id='1'
-          name='Bitcoin'
-          symbol='BTC'
-          img='bitcoin.png'
+          id="1"
+          name="Bitcoin"
+          symbol="BTC"
+          img="bitcoin.png"
           price={50000}
-          change={2} 
+          change={2}
         />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     const coinName = screen.getByText('Bitcoin');

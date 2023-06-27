@@ -3,8 +3,8 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import CoinsList from '../components/CoinsList';
 import { BrowserRouter } from 'react-router-dom';
+import CoinsList from '../components/CoinsList';
 
 const mockStore = configureMockStore([thunk]);
 
@@ -21,9 +21,9 @@ describe('CoinsList component', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-        <CoinsList />
+          <CoinsList />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     const loadingMessage = screen.getByText('Loading...');
@@ -32,8 +32,12 @@ describe('CoinsList component', () => {
 
   it('renders coins list when coins are available', () => {
     const coinsArr = [
-      { id: '1', name: 'Bitcoin', symbol: 'BTC', img: 'bitcoin.png', price: 50000, change: 2 },
-      { id: '2', name: 'Ethereum', symbol: 'ETH', img: 'ethereum.png', price: 2000, change: -1 },
+      {
+        id: '1', name: 'Bitcoin', symbol: 'BTC', img: 'bitcoin.png', price: 50000, change: 2,
+      },
+      {
+        id: '2', name: 'Ethereum', symbol: 'ETH', img: 'ethereum.png', price: 2000, change: -1,
+      },
     ];
 
     const store = mockStore({
@@ -47,9 +51,9 @@ describe('CoinsList component', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-        <CoinsList />
+          <CoinsList />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     const bitcoinElement = screen.getByText('Bitcoin');

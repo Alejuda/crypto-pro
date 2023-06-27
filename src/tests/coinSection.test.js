@@ -9,17 +9,17 @@ const mockStore = configureStore([]);
 describe('CoinSection component', () => {
   it('renders coin details when coin is selected', () => {
     const coinDetails = {
-      id: "bitcoin",
-      img: "https://static.coinstats.app/coins/1650455588819.png",
-      name: "Bitcoin",
-      symbol: "BTC",
+      id: 'bitcoin',
+      img: 'https://static.coinstats.app/coins/1650455588819.png',
+      name: 'Bitcoin',
+      symbol: 'BTC',
       price: 50000.00,
       volume: 1000000000,
       marketCap: 50000.00,
       hour: 2.5,
       change: 1.8,
       week: 3.2,
-  };
+    };
 
     const store = mockStore({
       coins: {
@@ -29,10 +29,9 @@ describe('CoinSection component', () => {
 
     render(
       <Provider store={store}>
-        <CoinSection id={'bitcoin'} />
-      </Provider>
+        <CoinSection id="bitcoin" />
+      </Provider>,
     );
-
 
     const coinImage = screen.getByAltText('NAME');
     expect(coinImage).toBeInTheDocument();
