@@ -32,8 +32,8 @@ describe('CoinsList component', () => {
 
   it('renders coins list when coins are available', () => {
     const coinsArr = [
-      { id: 1, name: 'Bitcoin', symbol: 'BTC', img: 'bitcoin.png', price: 50000, change: 2 },
-      { id: 2, name: 'Ethereum', symbol: 'ETH', img: 'ethereum.png', price: 2000, change: -1 },
+      { id: '1', name: 'Bitcoin', symbol: 'BTC', img: 'bitcoin.png', price: 50000, change: 2 },
+      { id: '2', name: 'Ethereum', symbol: 'ETH', img: 'ethereum.png', price: 2000, change: -1 },
     ];
 
     const store = mockStore({
